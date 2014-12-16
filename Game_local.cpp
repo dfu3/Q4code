@@ -1669,11 +1669,6 @@ void idGameLocal::MapRestart_f( const idCmdArgs &args ) {
 }
 
 
-int idGameLocal::GetScore( void)
-{
-	return score;
-}
-
 /*
 ===================
 idGameLocal::NextMap

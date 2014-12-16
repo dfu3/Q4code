@@ -56,6 +56,7 @@ rvMonsterGrunt::rvMonsterGrunt
 rvMonsterGrunt::rvMonsterGrunt ( void ) {
 	standingMeleeNoAttackTime = 0;
 	this ->health = 75;
+	this ->move.speed = 5;
 }
 
 /*
@@ -88,7 +89,7 @@ void rvMonsterGrunt::Spawn ( void )
 	}
 
 	this ->health = 75;
-
+	this ->move.speed = 5;
 }
 
 /*
@@ -142,6 +143,8 @@ void rvMonsterGrunt::RageStart ( void ) {
 	rageThreshold = 0;
 
 	this -> health = 75;
+	this ->move.speed = 5;
+
 }
 
 /*

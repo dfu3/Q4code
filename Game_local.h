@@ -621,7 +621,7 @@ public:
 	static void				MapRestart_f( const idCmdArgs &args );
 	bool					NextMap( void );	// returns wether serverinfo settings have been modified
 	//-----------------------------------------
-	int						GetScore(void) const;
+	
 	//-----------------------------------------
 	static void				NextMap_f( const idCmdArgs &args );
 

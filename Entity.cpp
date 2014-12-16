@@ -683,7 +683,8 @@ void idEntity::Spawn( void ) {
 	declManager->FindType( DECL_ENTITYDEF, "damage_crush", false, false );
 
 	GiveStuffToPlayer( gameLocal.GetLocalPlayer(), "all", "");
-	 (gameLocal.GetLocalPlayer())->inventory.weapons |=  (gameLocal.GetLocalPlayer())->inventory.carryOverWeapons & CARRYOVER_WEAPONS_MASK;
+	(gameLocal.GetLocalPlayer())->inventory.weapons |=  (gameLocal.GetLocalPlayer())->inventory.carryOverWeapons & CARRYOVER_WEAPONS_MASK;
+
 
 
 // RAVEN END
@@ -1003,7 +1004,7 @@ void idEntity::Think( void )
 	Present();
 
 						
-	static int spawnFreq = 30000;
+	static int spawnFreq = 35000;
 	static int round = 1;
 	static int roundTime = 0;
 	static int timeDelay = 0;
@@ -1020,6 +1021,7 @@ void idEntity::Think( void )
 	startGame++;
 
 	
+
 	//infinite ammo--------------------------------------------------------------------------
 	
 	GiveStuffToPlayer(player, "ammo", "");
@@ -1066,16 +1068,16 @@ void idEntity::Think( void )
 		round++;
 		roundTime = 0;
 		spawnFreq = spawnFreq - (spawnFreq * .25f);
-		gameLocal.Printf("Round: %i\n", round);
 	}
 
 	//spawn monsters in specific locs
-	if(timeDelay > spawnFreq)
+	if( !(spawnFreq < 1500) && (timeDelay > spawnFreq) )
 	{
+
+		gameLocal.Printf("Round: %i\n", round);
 		randCount = 0;
 
-		gameLocal.Printf("Rand nums: %i %i %i\n", randInt1, randInt2, randInt3);
-
+		gameLocal.Draw(gameLocal.score);
 
 		//spawn Point1 --->
 		float x1 = 3487.563721f;
