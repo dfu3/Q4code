@@ -1071,13 +1071,13 @@ void idEntity::Think( void )
 	}
 
 	//spawn monsters in specific locs
-	if( !(spawnFreq < 1500) && (timeDelay > spawnFreq) )
+	//&& (spawnFreq > 1500)
+	if( (timeDelay > spawnFreq)  )
 	{
 
 		gameLocal.Printf("Round: %i\n", round);
 		randCount = 0;
 
-		gameLocal.Draw(gameLocal.score);
 
 		//spawn Point1 --->
 		float x1 = 3487.563721f;
