@@ -65,14 +65,15 @@ rvMonsterGrunt::Spawn
 ================
 */
 
-static int spawnF =0 ;
+static int spawnF =0 ; //mtl23 spawns a monster right?not sure the variable name is unclear
 
 void rvMonsterGrunt::Spawn ( void ) 
 {
 
-	//AdjustHealthByDamage ( 9999999 );
+	//AdjustHealthByDamage ( 9999999 ); 
+	//spawnF++; // NBot sure what spawnF actually does
 
-	spawnF++;
+	//didnt use this doesnt do anything thanks ill comment it out
 
 	//health = 10;
 

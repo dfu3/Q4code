@@ -1247,7 +1247,8 @@ void idEntity::Think( void )
 
 		if( (randInt1 == 5) || (randInt2 == 5) || (randInt3 == 5) )
 		{
-			//spawns sixth grunt --->
+			//spawns sixth grunt ---> //you mean spawn grunt at  point 1????
+			//no this block spawns a grunt on the sixth point if it is randomly chosen to do so (dfu3)
 			idDict dict6;
 			idEntity *ent6 = NULL;
 			idVec3 EnOrigin6;
@@ -1270,18 +1271,20 @@ void idEntity::Think( void )
 			//<---
 		}
 
-		
+		////////////////////////why six grunts? Bc there are six points
 		//============================================================================================================
 			
-		timeDelay = 0;
+		timeDelay = 0; //not sure what this is for mtl23
+		//it resets timeDelay so that it can restart and increment untill it reaches SpawnFreq (its so the grunts dont spawn every frame) -(dfu3) 
 	}
 	else
-		timeDelay++;
+		timeDelay++; 
 
-	startGame++;
+	startGame++; //not sure what this is for mtl23
+	// just tells me if it is the begining of the game (dfu3)
 	
 	//gameLocal.Printf("position: {%f, %f, %f}------------------\n",origin.x, origin.y, origin.z);
-
+	//
 }
 
 void SpawnZombie(float inX, float inY, float inZ)
